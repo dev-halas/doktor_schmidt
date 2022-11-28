@@ -1,0 +1,111 @@
+.preload {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+}
+
+.preloadInner {
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.preload.animated .preloadFadeInTop  {
+    animation: preloadFadeInTop .85s ease-in-out;
+    -webkit-animation: preloadFadeInTop .85s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 1.2s;
+}
+
+@keyframes preloadFadeInTop {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        height: 0;
+    }
+    
+}
+
+.preload.animated .preloadFadeInBottom  {
+    animation: preloadFadeInBottom .85s ease-in-out;
+    -webkit-animation: preloadFadeInBottom .85s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 1.2s;
+}
+
+@keyframes preloadFadeInBottom {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(50%);
+        -webkit-transform: translateY(50%);
+        -moz-transform: translateY(50%);
+        -ms-transform: translateY(50%);
+        -o-transform: translateY(50%);
+        height: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes preloadHideImg {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(5);
+        -webkit-transform: scale(5);
+        -moz-transform: scale(5);
+        -ms-transform: scale(5);
+        -o-transform: scale(5);
+}
+}
+
+.preloadTop, .preloadBottom {
+    height: 50vh;
+    background-color: $dark;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+}
+
+.preloadBottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.preloadTop {
+    position: fixed;
+    top: 0;
+    margin-top: auto;
+}
+
+.preloadTop > img { 
+    max-width: 30vw;
+    height: auto;
+    margin-top: auto;
+    margin-bottom: 30px;
+}
+
+.preloadBottom > img {
+    max-width: 40vw;
+}
+
+.preloadBottom > img, .preloadTop > img {
+    animation: preloadHideImg .5s ease-in-out;
+    -webkit-animation: preloadHideImg .5s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 1.2s;
+}

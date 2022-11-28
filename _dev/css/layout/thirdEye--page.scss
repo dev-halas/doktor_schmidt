@@ -1,0 +1,134 @@
+.thirdHeader {
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include responsive('small'){
+        min-height: 60vh;
+    }
+}
+
+.thirdHeader::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $dark;
+    background: radial-gradient(circle, rgba(32,32,32,1) 0%, rgba(29,29,29,1) 55%, rgba(0,0,0,1) 85%);
+    opacity: 0.7;
+}
+
+.thirdHeader--inner {
+    color: $white;
+    height: 100%;
+    text-align: center;
+}
+
+.thirdHeader--inner h1 {
+    font-size: 50px;
+    @include responsive('small') {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 50px;
+        width: 70%;
+        margin: auto;
+    }
+}
+
+.thirdContent {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 25vh;
+    @include responsive('small') {
+        padding-bottom: 10vh;
+    }
+}
+
+.thirdMap{
+    position: absolute;
+    right: 0;
+    top: -25vh;
+    max-width: 80vw;
+    @include responsive('small'){
+        top: -20vh;
+    }
+}
+
+.thirdText{
+    padding: 10vh 0;
+}
+
+.thirdText p {
+    margin-bottom: 30px;
+}
+
+.thirdText span{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.thirdText--columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6vw;
+    margin-top: 5vh;
+    @include responsive('small') {
+        grid-template-columns: 1fr;
+    }
+}
+
+.thirdText--column {
+    grid-column: span 1;
+}
+
+.third--more {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    @include responsive('small'){
+        top: 20%;
+    }
+}
+
+.third--more p {
+    writing-mode: vertical-rl;
+    margin-bottom: 30px;
+}
+
+.third--more svg {
+    margin-left: 3px;
+}
+
+.thirdImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.thirdImage img {
+    width: 80%;
+    @include responsive ('small') {
+        width: 100%;
+    }
+}
+
+.thirdButton {
+    position: absolute;
+    left: 0;
+    bottom: 15%;
+    @include responsive('small') {
+        position: relative;
+    }
+}
+
+.posAbsTop {
+    top: 0;
+    @include responsive('small') {
+        display: none;
+    }
+}
+

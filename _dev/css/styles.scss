@@ -1,0 +1,34 @@
+
+
+/* ------ base ------ */
+
+@import "./base/reset.scss";
+@import "./base/core.scss";
+
+@import "./layout/preload.scss";
+
+
+
+/* ------ Layouts ------ */
+
+@import "./layout/header.scss";
+
+/* ------ Components ------ */
+
+@import "./components/homeSlider.scss";
+@import "./components/about.scss";
+@import "./components/snellen.scss";
+@import "./components/priceList.scss";
+@import "./components/treatment.scss";
+@import "./components/thirdEye.scss";
+
+
+/* ThirdEye Page */ 
+
+@import "./layout/thirdEye--page.scss";
+
+/* animations */
+
+@import "./base/animations.scss";
+
+@import "./layout/footer.scss";

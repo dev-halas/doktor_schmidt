@@ -1,0 +1,77 @@
+.treatment {
+    padding: 10vh 0 20vh 0;
+    @include responsive('small') {
+        background-position: center center!important;
+    }
+}
+
+.treatment--inner {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5vw;
+}
+
+.treatment--left {
+    grid-column: span 2;
+    @include responsive('small') {
+        grid-column: span 8;
+    }
+}
+
+.treatment--left span {
+    font-size: 14px;
+}
+
+.treatment--text {
+    grid-column: span 3;
+    @include responsive('small') {
+        grid-column: span 8;
+    }
+}
+
+.treatment--text div {
+    margin-bottom: 50px;
+    @include responsive('small') {
+        margin-right: 10vw;
+    }
+}
+
+.treatment--bg {
+    position: relative;
+}
+
+.treatment--bg .treatmentImg--bg{
+    min-width: 100vw;
+}
+
+.treatment--bg .treatment--glasses{
+    position: absolute;
+    top: -15vh;
+    min-width: 100vw;
+    z-index: 10;
+    @include responsive('small') {
+        top: -5vh;
+    }
+}
+
+.treatment--rotate {
+    display: flex;
+    justify-content: space-between;
+    writing-mode:vertical-rl;
+    position: absolute;
+    height: 200px;
+    top: 10vh;
+    @include responsive('small') {
+        top: 12vh;
+        right: 0;
+    }
+}
+
+.treatment--rotate p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.treatment--rotate svg {
+    align-self: end;
+}

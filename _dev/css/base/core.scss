@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&family=Poiret+One&family=Urbanist:wght@100;200;300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Urbanist:wght@100;200;300;400;600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 10vh;
+}
+
+body {
+    font-family: 'Poiret One', cursive;
+    overflow-x: hidden;
+    font-weight: 100;
+    font-size: 20px;
+    line-height: 1.35;
+    background-color: #E7E7E5;
+}
+h1, h2, h3, h4 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+$turquoise: #9DD9CF;
+$white: #ffffff;
+$dark: #1C1C1C;
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h1,h2,h3,h4 {
+    line-height: 1.5;
+}
+
+$breakpoints: (
+  'mobile':  480px,
+  'small': 768px,
+  'tablet': 1024px,
+  'laptop':  1200px,
+  'large': 1600px,
+  'fullhd': 1920px
+) !default;
+
+@mixin responsive($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media (max-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+   
+    // If the key doesn't exist in the map
+    @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+body {
+    @include responsive('large') {
+        font-size: 18px;
+    }
+    @include responsive('tablet') {
+        font-size: 16px;
+    }
+}
+
+
+$container: 80vw;
+$containerMobile: 90vw;
+
+.container {
+    width: min($container, 1600px);
+    margin: 0 auto;
+    position: relative;
+    @include responsive('tablet') {
+        width: min($containerMobile, 900px);
+    }
+}
+
+@media screen and (max-width: 782px) {
+    html {
+        margin-top: 0px !important;
+    }
+}
+
+.buttonTurquoise {
+    background-color: $turquoise;
+    color: $white;
+    padding: 14px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: fit-content;
+    margin: 20px 0;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 14px;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+}
+
+.buttonTurquoise:hover {
+    background-color: $dark;
+    color: $white;
+}
+
+.buttonTurquoise:hover > svg > image {
+    filter: invert(1) brightness(1);
+    opacity: .6;
+}
+
+.font--turquoise {
+    color: $turquoise;
+}
+

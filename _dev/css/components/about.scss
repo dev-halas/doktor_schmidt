@@ -1,0 +1,69 @@
+.about {
+    position: relative;
+    padding: 10vh 0;
+}
+
+.aboutInner {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5vw;
+}
+
+.aboutText {
+    grid-column: span 4;
+}
+
+.aboutText--inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5vw;
+    margin-bottom: 10vh;
+    @include responsive('small') {
+        margin-bottom: 5vh;
+    }
+}
+
+.aboutSubTitle {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.aboutTitle {
+    margin-bottom: 50px;
+}
+
+.aboutText--left, .aboutText--right {
+    grid-column: span 1;
+    @include responsive('small') {
+        grid-column: span 2;
+    }
+}
+
+.aboutImg {
+    grid-column: span 3;
+    margin-top: -20vh;
+    height: fit-content;
+    @include responsive('small') {
+        margin-top: 5vh;
+    }
+}
+
+.aboutImg img {
+    min-width: 100%;
+}
+
+@include responsive('small'){
+    .aboutImg, .aboutText {
+        grid-column: span 7;
+    }
+}
+
+.aboutGreyPhoto {
+    position: absolute;
+    right: 0;
+    top: 30%;
+    z-index: -1;
+    @include responsive('small'){
+        display: none;
+    }
+}

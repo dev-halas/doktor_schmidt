@@ -1,0 +1,121 @@
+.snellen {
+    position: relative;
+    padding-bottom: 10vh;
+}
+
+
+.snellen--item {
+    position: relative;
+}
+
+
+.snellen--item::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $white;
+    left: 0;
+    top: calc(50% - 1px);
+    @include responsive('small') {
+        height: 1px;
+    }
+}
+
+.snellen--itemInner {
+    width: min(50vw, 1000px);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    @include responsive('small') {
+        width: 90vw;
+    }
+}
+
+.snellen--itemInner div {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+.snellen--itemInner > span {
+    font-size: 16px;
+    @include responsive('small') {
+        font-size: 12px;
+    }
+}
+
+.snellen--50 {
+    font-size: clamp(8rem, 14vw, 250px);
+    line-height: clamp(100px, 12vw, 250px);
+    letter-spacing: 20px;
+}
+
+.snellen--25 {
+    font-size: clamp(4rem, 7vw, 125px);
+    letter-spacing: clamp(20px, 3vw, 40px);
+    line-height: clamp(70px, 7vw, 120px);
+}
+
+.snellen--16 {
+    font-size: clamp(2.5rem, 5vw, 85px);
+    letter-spacing: clamp(20px, 2.5vw, 30px);
+    line-height: clamp(60px, 5.5vw, 100px);
+}
+
+.snellen--12 {
+    font-size: clamp(1.5rem, 4vw, 65px);
+    letter-spacing: clamp(15px, 2vw, 25px);
+    line-height: clamp(50px, 7vw, 80px);
+}
+
+.snellen--10 {
+    font-size: clamp(1rem, 2.5vw, 50px);
+    letter-spacing: clamp(12px, 1.8vw, 20px);;
+    line-height: clamp(40px, 5vw, 80px);
+    
+}
+
+.snellen--50, .snellen--25, .snellen--16 {
+    filter: blur(.5rem);
+    -webkit-filter: blur(.5rem);
+}
+
+
+.snellen--12, .snellen--10 {
+    filter: blur(.3rem);
+    -webkit-filter: blur(.3rem);
+}
+
+.animated .blurIn{
+    animation: blurIn .8s ease-in;
+    -webkit-animation: blurIn .8s ease-in;
+    animation-fill-mode: both;
+}
+@keyframes blurIn {
+    from {
+        filter: blur(.5rem);
+        -webkit-filter: blur(.5rem);
+}
+    to {
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
+}
+
+.animated .blurInLight{
+    animation: blurIn .8s ease-in;
+    -webkit-animation: blurIn .8s ease-in;
+    animation-fill-mode: both;
+}
+@keyframes blurIn {
+    from {
+        filter: blur(.3rem);
+        -webkit-filter: blur(.3rem);
+}
+    to {
+        filter: blur(0);
+        -webkit-filter: blur(0);
+    }
+}

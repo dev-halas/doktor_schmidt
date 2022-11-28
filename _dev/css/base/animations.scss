@@ -1,0 +1,186 @@
+.fadeInBottomLow, .fadeInTopLow, .fadeInLeft, .fadeInRight {
+    opacity: 0;
+}
+
+.animated .fadeInBottomLow, .animated.fadeInBottomLow{
+    animation: fadeInBottomLow 1s;
+    -webkit-animation: fadeInBottomLow 1s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+@keyframes fadeInBottomLow {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+        -webkit-transform: translateY(20%);
+        -moz-transform: translateY(20%);
+        -ms-transform: translateY(20%);
+        -o-transform: translateY(20%);
+}
+    to {
+        opacity: 1;
+    }
+}
+
+.animated .fadeInTopLow, .animated.fadeInTopLow  {
+    animation: fadeInTopLow 1s;
+    -webkit-animation: fadeInTopLow 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInTopLow {
+    from {
+        opacity: 0;
+        transform: translateY(-20%);
+        -webkit-transform: translateY(-20%);
+        -moz-transform: translateY(-20%);
+        -ms-transform: translateY(-20%);
+        -o-transform: translateY(-20%);
+}
+    to {
+        opacity: 1;
+    }
+}
+
+.animated .fadeInLeft, .animated.fadeInLeft {
+    animation: fadeInLeft 1s ease-in-out;
+    -webkit-animation: fadeInLeft 1s ease-in-out;
+    animation-fill-mode: both;
+}
+
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-25%);
+        -webkit-transform: translateX(-25%);
+        -moz-transform: translateX(-25%);
+        -ms-transform: translateX(-25%);
+        -o-transform: translateX(-25%);
+}
+    to {
+        opacity: 1;
+    }
+}
+
+
+.animated .fadeInRight, .animated.fadeInRight {
+    animation: fadeInRight 1s ease-in-out;
+    -webkit-animation: fadeInRight 1s ease-in-out;
+    animation-fill-mode: both;
+}
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(25%);
+        -webkit-transform: translateX(25%);
+        -moz-transform: translateX(25%);
+        -ms-transform: translateX(25%);
+        -o-transform: translateX(25%);
+}
+    to {
+        opacity: 1;
+    }
+}
+
+.animate .imageFade, .animate.imageFade {
+    position: relative;
+}
+
+.animated .imageFade::before, .animated.imageFade::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $turquoise;
+    animation: imageFadeBefore .8s ease-in-out;
+    -webkit-animation: imageFadeBefore .8s ease-in-out;
+    animation-fill-mode: both;
+    opacity: 1;
+    animation-delay: .2s;
+    z-index: 5;
+}
+
+.animated .imageFade::after, .animated.imageFade::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $turquoise;
+    animation: imageFadeAfter .8s ease-in-out;
+    -webkit-animation: imageFadeAfter .8s ease-in-out;
+    animation-fill-mode: both;
+    opacity: .8;
+    bottom: 0;
+    animation-delay: .8s;
+}
+
+@keyframes imageFadeBefore {
+    from {
+        height: 100%;
+}
+    to {
+        height: 0%;
+        transform: translateY(100%);
+        -webkit-transform: translateY(100%);
+        -moz-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        -o-transform: translateY(100%);
+}
+}
+
+@keyframes imageFadeAfter {
+    from {
+        opacity: .6;
+        height: 100%;
+}
+    to {
+        height: 0%;
+        transform: translateY(-150%);
+        -webkit-transform: translateY(-150%);
+        -moz-transform: translateY(-150%);
+        -ms-transform: translateY(-150%);
+        -o-transform: translateY(-150%);
+    }
+}
+
+
+
+
+/* Animation Delays */
+
+.animate .d-200, .animate.d-200 {
+    animation-delay: .2s;
+}
+
+.animate .d-400, .animate.d-400 {
+    animation-delay: .4s;
+}
+
+.animate .d-600, .animate.d-600 {
+    animation-delay: .6s;
+}
+
+.animate .d-800, .animate.d-800 {
+    animation-delay: .8s;
+}
+
+.animate .d-1000, .animate.d-1000 {
+    animation-delay: 1s;
+}
+
+.animate .d-1200, .animate.d-1200 {
+    animation-delay: 1.2s;
+}
+
+.animate .d-1600, .animate.d-1600 {
+    animation-delay: 1.6s;
+}
+
+.animate .d-1800, .animate.d-1800 {
+    animation-delay: 1.8s;
+}
+
+.animate .d-2000, .animate.d-2000 {
+    animation-delay: 2s;
+}
